@@ -82,7 +82,7 @@ class HomePage extends StatelessWidget{
           horizontal: 24
         ),
         children: [
-          buildProfile(),
+          buildProfile(context),
           buildWalletCard(),
           buildLevel(),
           buildServices(),
@@ -93,25 +93,63 @@ class HomePage extends StatelessWidget{
     );
   }
 
-  Widget buildProfile(){
+  Widget buildProfile(BuildContext context){
     return Container(
       margin: const EdgeInsets.only(
-          top:30
+          top:40
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            'Nama Profile',
-            style: blackTextStyle.copyWith(
-              fontSize: 16,
-              fontWeight: semiBold,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'nama',
+                style: greyTextStyle.copyWith(
+                  fontSize: 16,
+                ),
+              ),
+              const SizedBox(
+                height: 2,
+              ),
+              Text(
+                'Nama Lengkap',
+                style: blackTextStyle.copyWith(
+                  fontSize: 20,
+                  fontWeight: semiBold,
+                ),
+              )
+            ],
+          ),
+          GestureDetector(
+            onTap:(){
+              Navigator.pushNamed(context, '/profile');
+            },
+            child: Container(
+              width: 60,
+              height: 60,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                    image: AssetImage(
+                      'assets/img_profile.png',
+                    ),
+                ),
+              ),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  width: 16,
+                  height: 16,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: whiteColor,
+                  ),
+                ),
+              ),
             ),
           ),
-          const SizedBox(
-            height: 16,
-          ),
-
         ],
       ),
     );

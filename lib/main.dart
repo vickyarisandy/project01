@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project01/ui/pages/home_page.dart';
 import 'package:project01/ui/pages/onboarding_page.dart';
+import 'package:project01/ui/pages/profile_page.dart';
 import 'package:project01/ui/pages/sign_in_page.dart';
 import 'package:project01/ui/pages/sign_up_page.dart';
 import 'package:project01/ui/pages/sign_up_set_ktp_page.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget{
         '/sign-up-ktp': (context) => const SignUpSetKtpPage(),
         '/sign-up-success': (context) => const SignUpSuccessPage(),
         '/home': (context) => const HomePage(),
+        '/profile': (context) => const ProfilePage(),
       },
       // home: SplashPage(),
     );
