@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project01/shared/theme.dart';
+import 'package:project01/ui/widgets/buttons.dart';
+import 'package:project01/ui/widgets/profil_menu_item.dart';
 
 class ProfilePage extends StatelessWidget{
   const ProfilePage({Key?key}): super(key: key);
@@ -29,7 +31,7 @@ class ProfilePage extends StatelessWidget{
         ),
         children: [
           const SizedBox(
-            width: 40,
+            width: 30,
           ),
           Container(
             padding: const EdgeInsets.symmetric(
@@ -74,9 +76,54 @@ class ProfilePage extends StatelessWidget{
                     fontSize: 18,
                     fontWeight: medium,
                   ),
-                )
+                ),
+                const SizedBox(
+                  width: 40,
+                ),
+                ProfilMenuItem(
+                  iconUrl: 'assets/ic_edit_profile.png',
+                  title: 'edit profile',
+                  onTap: (){},
+                ),
+                ProfilMenuItem(
+                  iconUrl: 'assets/ic_pin.png',
+                  title: 'My pin',
+                  onTap: (){},
+                ),
+                ProfilMenuItem(
+                  iconUrl: 'assets/ic_wallet.png',
+                  title: 'Wallet Setting',
+                  onTap: (){},
+                ),
+                ProfilMenuItem(
+                  iconUrl: 'assets/ic_reward.png',
+                  title: 'My Rewards',
+                  onTap: (){},
+                ),
+                ProfilMenuItem(
+                  iconUrl: 'assets/ic_help.png',
+                  title: 'Help Center',
+                  onTap: (){},
+                ),
+                ProfilMenuItem(
+                  iconUrl: 'assets/ic_logout.png',
+                  title: 'Log Out',
+                  onTap: (){},
+                ),
               ],
             ),
+          ),
+          const SizedBox(
+            width: 87,
+          ),
+          CustomFilledButton(
+              title: 'Report Problem',
+            onPressed: (){
+
+            },
+          ),
+          const SizedBox(
+            width: 50,
           ),
         ],
       ),
