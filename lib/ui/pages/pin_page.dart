@@ -2,8 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:project01/shared/theme.dart';
 import 'package:project01/ui/widgets/buttons.dart';
 
-class PinPage extends StatelessWidget{
+class PinPage extends StatefulWidget{
   const PinPage({Key? key}): super(key:key);
+
+  @override
+  State<PinPage> createState() => _PinPageState();
+}
+
+class _PinPageState extends State<PinPage> {
+
+  final TextEditingController pinController = TextEditingController(text: '');
+
+  addPin(String number){
+    if(pinController.text.length < 6){
+      setState(() {
+        pinController.text = pinController.text + number;
+      });
+    }
+  }
+
+  deletePin(){
+    if(pinController.text.isNotEmpty){
+      setState(() {
+        pinController.text = pinController.text.substring(0, pinController.text.length - 1);
+      });
+    }
+  }
 
   Widget build(BuildContext context){
     return Scaffold(
@@ -28,21 +52,18 @@ class PinPage extends StatelessWidget{
               SizedBox(
                 width: 200,
                 child: TextFormField(
+                  controller: pinController,
                   obscureText: true,
                   cursorColor: greyColor,
-                    obscuringCharacter: '*',
+                  obscuringCharacter: '*',
+                  enabled: false,
                   style: whiteTextStyle.copyWith(
                     fontSize: 36,
                     fontWeight: medium,
                     letterSpacing: 16,
                   ),
                   decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: greyColor,
-                      ),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
+                    disabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: greyColor,
                       ),
@@ -59,39 +80,57 @@ class PinPage extends StatelessWidget{
                 children: [
                   CustomInputButton(
                       title: '1',
-                      onTap: (){},
+                      onTap: (){
+                        addPin('1');
+                      },
                   ),
                   CustomInputButton(
                     title: '2',
-                    onTap: (){},
+                    onTap: (){
+                      addPin('2');
+                    },
                   ),
                   CustomInputButton(
                     title: '3',
-                    onTap: (){},
+                    onTap: (){
+                      addPin('3');
+                    },
                   ),
                   CustomInputButton(
                     title: '4',
-                    onTap: (){},
+                    onTap: (){
+                      addPin('4');
+                    },
                   ),
                   CustomInputButton(
                     title: '5',
-                    onTap: (){},
+                    onTap: (){
+                      addPin('5');
+                    },
                   ),
                   CustomInputButton(
                     title: '6',
-                    onTap: (){},
+                    onTap: (){
+                      addPin('6');
+                    },
                   ),
                   CustomInputButton(
                     title: '7',
-                    onTap: (){},
+                    onTap: (){
+                      addPin('7');
+                    },
                   ),
                   CustomInputButton(
                     title: '8',
-                    onTap: (){},
+                    onTap: (){
+                      addPin('8');
+                    },
                   ),
                   CustomInputButton(
                     title: '9',
-                    onTap: (){},
+                    onTap: (){
+                      addPin('9');
+                    },
                   ),
                   const SizedBox(
                     width: 60,
@@ -99,10 +138,14 @@ class PinPage extends StatelessWidget{
                   ),
                   CustomInputButton(
                     title: '0',
-                    onTap: (){},
+                    onTap: (){
+                      addPin('0');
+                    },
                   ),
                   GestureDetector(
-                    onTap: (){},
+                    onTap: (){
+                      deletePin();
+                    },
                     child: Container(
                       width: 60,
                       height: 60,
@@ -126,5 +169,4 @@ class PinPage extends StatelessWidget{
       ),
     );
   }
-
 }
