@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project01/shared/theme.dart';
 import 'package:project01/ui/widgets/home_lates_transaction.dart';
+import 'package:project01/ui/widgets/home_tips_item.dart';
 
 import '../widgets/home_services_item_dart.dart';
 import '../widgets/home_user_item.dart';
@@ -86,6 +87,7 @@ class HomePage extends StatelessWidget{
           buildLevel(),
           buildServices(),
           buildSendAgain(),
+          buildFriendlyTips(),
         ],
       ),
     );
@@ -358,5 +360,54 @@ class HomePage extends StatelessWidget{
     );
   }
 
+  Widget buildFriendlyTips(){
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 30,
+        bottom: 50,
+      ),
+      child: Column(
+        children: [
+          Text(
+            'Friendly Tips',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          Wrap(
+            spacing: 17,
+            runSpacing: 18,
+            children: const [
+              HomeTipsItem(
+                  imageUrl: 'assets/img_tips1.png',
+                  title: 'tips',
+                  url: 'https://google.com'
+              ),
+              HomeTipsItem(
+                  imageUrl: 'assets/img_tips2.png',
+                  title: 'tips',
+                  url: 'https://google.com'
+              ),
+              HomeTipsItem(
+                  imageUrl: 'assets/img_tips3.png',
+                  title: 'tips',
+                  url: 'https://google.com'
+              ),
+              HomeTipsItem(
+                  imageUrl: 'assets/img_tips4.png',
+                  title: 'tips',
+                  url: 'https://google.com'
+              ),
+            ],
+          ),
+
+        ],
+      ),
+    );
+  }
 
 }
