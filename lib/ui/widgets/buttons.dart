@@ -66,7 +66,7 @@ class CustomInputButton extends StatelessWidget{
               title,
             style: whiteTextStyle.copyWith(
               fontSize: 22,
-              fontWeight: semiBold.
+              fontWeight: semiBold,
             ),
           ),
         ),

@@ -72,7 +72,11 @@ class ProfilePage extends StatelessWidget{
                 ProfilMenuItem(
                   iconUrl: 'assets/ic_edit_profile.png',
                   title: 'edit profile',
-                  onTap: (){},
+                  onTap: () async{
+                    if( await Navigator.pushNamed(context, '/pin') == true){
+                      Navigator.pushNamed(context, 'profle-edit');
+                    }
+                  },
                 ),
                 ProfilMenuItem(
                   iconUrl: 'assets/ic_pin.png',
