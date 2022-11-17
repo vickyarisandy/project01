@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project01/shared/theme.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 class HomeTipsItem extends StatelessWidget{
 
@@ -16,43 +18,50 @@ class HomeTipsItem extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return Container(
-      width: 155,
-        height: 176,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: whiteColor,
-      ),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.vertical(
-              top: Radius.circular(20),
-            ),
-            child: Image.asset(
-              'imageUrl',
-              width: 155,
-              height: 110,
-              fit: BoxFit.cover,
-            ),
-          ),
-          const SizedBox(
-            height: 12,
-          ),
-          Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12
+    return GestureDetector(
+      onTap: () async{
+        if(await canLaunch(url)){
+          launch(url);
+        }
+      },
+      child: Container(
+        width: 155,
+          height: 176,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: whiteColor,
+        ),
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(20),
               ),
-            child: Text(
-              title,
-              style: blackTextStyle.copyWith(
-                fontWeight: medium,
-                overflow: TextOverflow.ellipsis,
+              child: Image.asset(
+                'imageUrl',
+                width: 155,
+                height: 110,
+                fit: BoxFit.cover,
               ),
-              maxLines: 2,
             ),
-          ),
-        ],
+            const SizedBox(
+              height: 12,
+            ),
+            Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12
+                ),
+              child: Text(
+                title,
+                style: blackTextStyle.copyWith(
+                  fontWeight: medium,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                maxLines: 2,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

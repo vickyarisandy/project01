@@ -7,7 +7,6 @@ import 'package:project01/ui/pages/sign_up_set_ktp_page.dart';
 import 'package:project01/ui/pages/sign_up_set_profile_page.dart';
 import 'package:project01/ui/pages/sign_up_success_page.dart';
 import 'package:project01/ui/pages/splash_page.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(const MyApp());
 
