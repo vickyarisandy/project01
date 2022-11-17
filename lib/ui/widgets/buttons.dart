@@ -39,6 +39,17 @@ class CustomFilledButton extends StatelessWidget{
   }
 }
 
+class CustomTextButtton extends StatelessWidget{
+  const CustomTextButtton({Key?key}): super(key:key);
+
+  @override
+  Widget build(BuildContext context){
+    return Container(
+
+    );
+  }
+}
+
 class CustomInputButton extends StatelessWidget{
 
   final String title;

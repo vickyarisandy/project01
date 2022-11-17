@@ -3,17 +3,17 @@ import 'package:project01/shared/theme.dart';
 import 'package:project01/ui/widgets/buttons.dart';
 import 'package:project01/ui/widgets/forms.dart';
 
-class ProfileEdit extends StatelessWidget{
-  const ProfileEdit({Key? key}) : super(key:key);
+class ProfileEditPin extends StatelessWidget{
+  const ProfileEditPin({Key? key}) : super(key:key);
 
   @override
   Widget build(BuildContext context){
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Edit Profile'
-          ),
+      appBar: AppBar(
+        title: const Text(
+            'Edit Pin'
         ),
+      ),
       body: ListView(
         padding: const EdgeInsets.symmetric(
           horizontal: 24,
@@ -32,35 +32,22 @@ class ProfileEdit extends StatelessWidget{
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CustomFormField(
-                    title: 'Username'
+                    title: 'Old Pin'
                 ),
                 const SizedBox(
                   height: 16,
                 ),
                 const CustomFormField(
-                    title: 'Full name'
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                const CustomFormField(
-                    title: 'Email'
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                const CustomFormField(
-                  title: 'password',
-                  obscureText: true,
+                    title: 'New Pin'
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                 CustomFilledButton(
+                CustomFilledButton(
                   title: 'Update now',
-                   onPressed: (){
-                     Navigator.pushNamedAndRemoveUntil(context, 'profile-edit-success', (route) => false);
-                   },
+                  onPressed: (){
+                    Navigator.pushNamedAndRemoveUntil(context, 'profile-edit-success', (route) => false);
+                  },
                 ),
               ],
             ),
