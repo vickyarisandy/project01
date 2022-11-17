@@ -13,6 +13,7 @@ import 'package:project01/ui/pages/sign_up_set_ktp_page.dart';
 import 'package:project01/ui/pages/sign_up_set_profile_page.dart';
 import 'package:project01/ui/pages/sign_up_success_page.dart';
 import 'package:project01/ui/pages/splash_page.dart';
+import 'package:project01/ui/pages/topup_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget{
         '/profile-edit': (context) => const ProfileEdit(),
         '/profile-edit-pin': (context) => const ProfileEditPin(),
         '/profile-edit-success': (context) => const ProfileEditSuccess(),
+        '/topup': (context) => const TopupPage(),
       },
       // home: SplashPage(),
     );
