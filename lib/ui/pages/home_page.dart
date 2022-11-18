@@ -105,7 +105,7 @@ class HomePage extends StatelessWidget{
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'nama',
+                '@nama',
                 style: greyTextStyle.copyWith(
                   fontSize: 16,
                 ),
@@ -325,25 +325,25 @@ class HomePage extends StatelessWidget{
                   value: '+4.000',
                 ),
                 HomeLatestTransaction(
-                  iconUrl: 'assets/ic_cat2.png',
+                  iconUrl: 'assets/ic_cat1.png',
                   title: 'Cashback',
                   time: 'Sep 11',
                   value: '+22.000',
                 ),
                 HomeLatestTransaction(
-                  iconUrl: 'assets/ic_cat3.png',
+                  iconUrl: 'assets/ic_cat1.png',
                   title: 'Withdraw',
                   time: 'Sep 10',
                   value: '-14.000',
                 ),
                 HomeLatestTransaction(
-                  iconUrl: 'assets/ic_cat4.png',
+                  iconUrl: 'assets/ic_cat1.png',
                   title: 'Transfer',
                   time: 'Yesterday',
                   value: '-4.000',
                 ),
                 HomeLatestTransaction(
-                  iconUrl: 'assets/ic_cat5.png',
+                  iconUrl: 'assets/ic_cat1.png',
                   title: 'Electric',
                   time: 'Yesterday',
                   value: '-124.000',
@@ -431,17 +431,17 @@ class HomePage extends StatelessWidget{
                   url: 'https://google.com'
               ),
               HomeTipsItem(
-                  imageUrl: 'assets/img_tips2.png',
+                  imageUrl: 'assets/img_tips1.png',
                   title: 'tips',
                   url: 'https://google.com'
               ),
               HomeTipsItem(
-                  imageUrl: 'assets/img_tips3.png',
+                  imageUrl: 'assets/img_tips1.png',
                   title: 'tips',
                   url: 'https://google.com'
               ),
               HomeTipsItem(
-                  imageUrl: 'assets/img_tips4.png',
+                  imageUrl: 'assets/img_tips1.png',
                   title: 'tips',
                   url: 'https://google.com'
               ),
