@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project01/shared/shared_method.dart';
 import 'package:project01/shared/theme.dart';
 import 'package:project01/ui/widgets/home_lates_transaction.dart';
 import 'package:project01/ui/widgets/home_tips_item.dart';
@@ -201,7 +202,7 @@ class HomePage extends StatelessWidget{
             style: whiteTextStyle,
           ),
           Text(
-              '12.500',
+            formatIDR(12500),
             style: whiteTextStyle.copyWith(
               fontSize: 24,
               fontWeight: semiBold,
@@ -239,7 +240,23 @@ class HomePage extends StatelessWidget{
                   fontWeight: medium,
                 ),
               ),
+              Text(
+                'of ${formatIDR(20000)}',
+                style: blackTextStyle.copyWith(
+                  fontWeight: semiBold,
+                ),
+              ),
             ],
+          ),
+          const SizedBox(height: 10,),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(55),
+            child: LinearProgressIndicator(
+                value: 0.55,
+                minHeight: 5,
+                valueColor: AlwaysStoppedAnimation(greenColor),
+                backgroundColor: lightBackgroundColor,
+            ),
           ),
         ],
       ),
@@ -326,36 +343,36 @@ class HomePage extends StatelessWidget{
               color: whiteColor,
             ),
             child: Column(
-              children: const [
+              children: [
                 HomeLatestTransaction(
                   iconUrl: 'assets/ic_cat1.png',
                   title: 'Top Up',
                   time: 'Yesterday',
-                  value: '+4.000',
+                  value: '+ ${formatIDR(4000, symbol: '' )}',
                 ),
                 HomeLatestTransaction(
                   iconUrl: 'assets/ic_cat1.png',
                   title: 'Cashback',
                   time: 'Sep 11',
-                  value: '+22.000',
+                  value: '+ ${formatIDR(22000, symbol: '' )}',
                 ),
                 HomeLatestTransaction(
                   iconUrl: 'assets/ic_cat1.png',
                   title: 'Withdraw',
                   time: 'Sep 10',
-                  value: '-14.000',
+                  value: '- ${formatIDR(14000, symbol: '' )}',
                 ),
                 HomeLatestTransaction(
                   iconUrl: 'assets/ic_cat1.png',
                   title: 'Transfer',
                   time: 'Yesterday',
-                  value: '-4.000',
+                  value: '- ${formatIDR(4000, symbol: '' )}',
                 ),
                 HomeLatestTransaction(
                   iconUrl: 'assets/ic_cat1.png',
                   title: 'Electric',
                   time: 'Yesterday',
-                  value: '-124.000',
+                  value: '- ${formatIDR(124000, symbol: '' )}',
                 ),
                 ],
             ),

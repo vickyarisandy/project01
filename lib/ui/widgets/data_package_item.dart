@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project01/shared/shared_method.dart';
 import 'package:project01/shared/theme.dart';
 
 class DataPackageItem extends StatelessWidget{
@@ -45,7 +46,7 @@ class DataPackageItem extends StatelessWidget{
             height: 2,
           ),
           Text(
-            'RP. $harga',
+            formatIDR(harga),
             style: greyTextStyle.copyWith(
               fontSize: 12,
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project01/shared/shared_method.dart';
 import 'package:project01/shared/theme.dart';
 import 'package:project01/ui/widgets/buttons.dart';
 import 'package:project01/ui/widgets/data_provider_item.dart';
@@ -53,7 +54,7 @@ class DataProviderPage extends StatelessWidget{
                   ),
                   const SizedBox(height: 2,),
                   Text(
-                      'Balance: Rp. 12.500',
+                      'Balance: ${formatIDR(12500)}',
                     style: greyTextStyle.copyWith(
                       fontSize: 12,
                     ),
