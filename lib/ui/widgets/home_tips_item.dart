@@ -38,7 +38,7 @@ class HomeTipsItem extends StatelessWidget{
                 top: Radius.circular(20),
               ),
               child: Image.asset(
-                'imageUrl',
+                imageUrl,
                 width: 155,
                 height: 110,
                 fit: BoxFit.cover,

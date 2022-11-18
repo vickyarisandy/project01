@@ -35,7 +35,7 @@ class TopupPage extends StatelessWidget{
           Row(
             children: [
               Image.asset(
-                  'assets/wallet.png',
+                  'assets/img_wallet.png',
                 width: 80,
               ),
               const SizedBox(
@@ -45,7 +45,7 @@ class TopupPage extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                      '0000 0000 0000 0000',
+                      '0000 0000 0000 1234',
                     style: blackTextStyle.copyWith(
                       fontSize: 16,
                       fontWeight: medium,

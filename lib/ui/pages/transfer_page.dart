@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:project01/shared/theme.dart';
+import 'package:project01/ui/widgets/buttons.dart';
 import 'package:project01/ui/widgets/forms.dart';
+import 'package:project01/ui/widgets/tranfer_result_user_item.dart';
+import 'package:project01/ui/widgets/transfer_recent_user_item.dart';
 
 class TransferPage extends StatelessWidget{
   const TransferPage({Key?key}): super(key: key);
@@ -31,6 +34,16 @@ class TransferPage extends StatelessWidget{
             isShowTitle: false,
           ),
           buildRecentUser(),
+          const SizedBox(
+            height: 274,
+          ),
+          CustomFilledButton(
+              title: 'continue',
+            onPressed: (){},
+          ),
+          const SizedBox(
+            height: 50,
+          ),
         ],
       ),
     );
@@ -38,14 +51,6 @@ class TransferPage extends StatelessWidget{
 
 
   Widget buildRecentUser(){
-    return Container(
-      margin: const EdgeInsets.only(
-          top: 40
-      ),
-    );
-  }
-
-  Widget buildResult(){
     return Container(
       margin: const EdgeInsets.only(
           top: 40
@@ -63,6 +68,63 @@ class TransferPage extends StatelessWidget{
           const SizedBox(
             height: 14,
           ),
+          const TransferRecentUserItem(
+            imageUrl: 'assets/friend1.png',
+            name: 'nama lengkap',
+            username: 'username',
+            isVerified: true,
+          ),
+          const TransferRecentUserItem(
+            imageUrl: 'assets/friend3.png',
+            name: 'nama lengkap',
+            username: 'username',
+
+          ),
+          const TransferRecentUserItem(
+            imageUrl: 'assets/friend4.png',
+            name: 'nama lengkap',
+            username: 'username',
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildResult(){
+    return Container(
+      margin: const EdgeInsets.only(
+          top: 40
+      ),
+      child: Column(
+        children: [
+          Text(
+            'Result',
+            style: blackTextStyle.copyWith(
+              fontSize:16,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          Wrap(
+            spacing: 17,
+            runSpacing: 17,
+            children: const [
+               TransferResultUserItem(
+                imageUrl: 'assets/friend4.png',
+                name: 'nama lengkap',
+                username: 'username',
+                 isVerified: true,
+              ),
+              TransferResultUserItem(
+                imageUrl: 'assets/friend2.png',
+                name: 'nama lengkap',
+                username: 'username',
+                isSelected: true,
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -70,3 +132,4 @@ class TransferPage extends StatelessWidget{
 
 
 }
+

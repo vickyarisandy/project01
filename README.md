@@ -79,3 +79,21 @@ light, regular, medium , semiBold, bold , extraBold, black,
 
 
 ```
+
+## Custom Widget
+
+```ags1
+import 'package:flutter/material.dart';
+
+class TransferRecentUserItem extends StatelessWidget{
+  const TransferRecentUserItem({Key?key}): super(key: key);
+
+  @override
+  Widget build(BuildContext context){
+    return Container(
+      
+    );
+  }
+
+}
+```

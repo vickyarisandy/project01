@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget{
             items: [
               BottomNavigationBarItem(
                 icon: Image.asset(
-                    'assets/gambar/ic_overview.png',
+                    'assets/ic_overview.png',
                     width: 20,
                   color: blueColor,
                   ),
@@ -45,24 +45,24 @@ class HomePage extends StatelessWidget{
               ),
               BottomNavigationBarItem(
                 icon: Image.asset(
-                  'assets/gambar/ic_history.png',
+                  'assets/ic_history.png',
                   width: 20,
                 ),
-                label: 'Overview',
+                label: 'Riwayat',
               ),
               BottomNavigationBarItem(
                 icon: Image.asset(
-                  'assets/gambar/ic_Statistik.png',
+                  'assets/ic_Statistik.png',
                   width: 20,
                 ),
-                label: 'Overview',
+                label: 'Statistik',
               ),
               BottomNavigationBarItem(
                 icon: Image.asset(
-                  'assets/gambar/ic_reward.png',
+                  'assets/ic_reward.png',
                   width: 20,
                 ),
-                label: 'Overview',
+                label: 'Reward',
               ),
             ],
           ),
@@ -298,7 +298,11 @@ class HomePage extends StatelessWidget{
 
   Widget buildLatestTransaction(){
     return Container(
+      margin: const EdgeInsets.only(
+          top:30
+      ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'Latest Transaciton',
