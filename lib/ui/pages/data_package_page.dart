@@ -69,8 +69,10 @@ class DataPackagePage extends StatelessWidget{
           const SizedBox(height: 85,),
           CustomFilledButton(
               title: 'Continue',
-            onPressed: (){
-
+            onPressed: () async {
+              if(await Navigator.pushNamed(context, '/pin') == true ){
+                Navigator.pushNamedAndRemoveUntil(context, '/data-package-success', (route) => false);
+              }
             },
           ),
           const SizedBox(height: 57,),

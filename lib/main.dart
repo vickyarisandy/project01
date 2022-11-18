@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:project01/shared/theme.dart";
 import 'package:project01/ui/pages/data_package_page.dart';
+import 'package:project01/ui/pages/data_package_success.dart';
 import 'package:project01/ui/pages/data_provider_page.dart';
 import "package:project01/ui/pages/home_page.dart";
 import "package:project01/ui/pages/onboarding_page.dart";
@@ -67,6 +68,7 @@ class MyApp extends StatelessWidget{
         "/transfer-success": (context) => const TransferSuccessPage(),
         "/data-provider": (context) => const DataProviderPage(),
         "/data-package": (context) => const DataPackagePage(),
+        "/data-package-success": (context) => const DataPackageSuccess(),
       },
       // home: SplashPage(),
     );
