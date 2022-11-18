@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project01/shared/theme.dart';
+import 'package:project01/ui/widgets/buttons.dart';
+import 'package:project01/ui/widgets/data_provider_item.dart';
 
 class DataProviderPage extends StatelessWidget{
   const DataProviderPage({Key?key}): super(key: key);
@@ -60,6 +62,34 @@ class DataProviderPage extends StatelessWidget{
               )
             ],
           ),
+          const SizedBox(height: 40,),
+          Text(
+            'Pilih Provider',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(height: 14,),
+          const DataProviderItem(
+            name: 'Telkomsel',
+            imageUrl: 'assets/img_provider_telkomsel.png',
+            isSelected: true,
+          ),
+          const DataProviderItem(
+            name: 'Indosat Oordeo',
+            imageUrl: 'assets/img_provider_indosat.png',
+          ),
+          const DataProviderItem(
+            name: 'Three (3)',
+            imageUrl: 'assets/img_provider_three.png',
+          ),
+          const SizedBox(height: 135,),
+          CustomFilledButton(
+            title: 'continue',
+            onPressed: (){},
+          ),
+          const SizedBox(height: 57,),
         ],
       ),
     );
