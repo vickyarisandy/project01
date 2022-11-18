@@ -477,9 +477,59 @@ class MoreDialog extends StatelessWidget{
       content: Container(
         height: 326,
         width: MediaQuery.of(context).size.width,
+        padding: const EdgeInsets.all(30),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
           color: lightBackgroundColor,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Do More with Us',
+              style: blackTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: semiBold,
+              ),
+            ),
+            const SizedBox(height: 13,),
+            Wrap(
+              spacing: 29,
+              runSpacing: 25,
+              children: [
+                HomeServiceItem(
+                  iconUrl: 'assets/ic_product_data.png',
+                  title: 'Data',
+                  onTap: (){},
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/ic_product_food.png',
+                  title: 'Makanan',
+                  onTap: (){},
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/ic_product_movie.png',
+                  title: 'Film',
+                  onTap: (){},
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/ic_product_water.png',
+                  title: 'Air Mineral',
+                  onTap: (){},
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/ic_product_stream.png',
+                  title: 'Stream',
+                  onTap: (){},
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/ic_product_travel.png',
+                  title: 'Travel',
+                  onTap: (){},
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
