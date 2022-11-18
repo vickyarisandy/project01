@@ -45,7 +45,7 @@ class DataProviderPage extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '+62123412341221',
+                    '0000 0000 0000 1234',
                     style: blackTextStyle.copyWith(
                       fontSize: 16,
                       fontWeight: medium,
@@ -87,7 +87,9 @@ class DataProviderPage extends StatelessWidget{
           const SizedBox(height: 135,),
           CustomFilledButton(
             title: 'continue',
-            onPressed: (){},
+            onPressed: (){
+              Navigator.pushNamed(context, '/data-package');
+            },
           ),
           const SizedBox(height: 57,),
         ],

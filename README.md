@@ -80,7 +80,7 @@ light, regular, medium , semiBold, bold , extraBold, black,
 
 ```
 
-## Custom Widget
+## class create custom Widget
 
 ```ags1
 import 'package:flutter/material.dart';
@@ -97,3 +97,34 @@ class TransferRecentUserItem extends StatelessWidget{
 
 }
 ```
+
+## class create new fitur
+
+```agsl
+import 'package:flutter/material.dart';
+
+class NameClassPage extends StatelessWidget{
+  const NameClassPage({Key?key}): super(key: key);
+
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+            'Paket Data',
+        ),
+      ),
+      body: ListView(
+        children: [
+          
+        ],
+      ),
+    );
+  }
+
+}
+```
+
+>> Nb
+
+untuk kelas turunan sudah diterapkan,

@@ -54,7 +54,7 @@ class DataProviderItem extends StatelessWidget{
               Text(
                   'Available',
                 style: greyTextStyle.copyWith(
-                  fontSize: ,
+                  fontSize: 12,
                 ),
               ),
             ],
