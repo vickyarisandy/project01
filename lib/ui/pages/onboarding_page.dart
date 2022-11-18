@@ -45,11 +45,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       height: 331,
                   ),
                   Image.asset(
-                    'assets/img_onboarding1.png',
+                    'assets/img_onboarding2.png',
                     height: 331,
                   ),
                   Image.asset(
-                    'assets/img_onboarding1.png',
+                    'assets/img_onboarding3.png',
                     height: 331,
                   ),
                 ],
@@ -109,7 +109,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       CustomFilledButton(
                           title:'masuk',
                         onPressed: (){
-                          Navigator.pushNamedAndRemoveUntil(context, 'sign-up', (route) => false);
+                          Navigator.pushNamedAndRemoveUntil(context, '/sign-up', (route) => false);
                         },
                       ),
                       const SizedBox(
@@ -120,7 +120,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                         height: 24,
                         child: TextButton(
                           onPressed: (){
-                            Navigator.pushNamedAndRemoveUntil(context, 'sign-in', (route) => false);
+                            Navigator.pushNamedAndRemoveUntil(context, '/sign-in', (route) => false);
                           },
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.zero,

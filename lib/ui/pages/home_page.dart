@@ -85,6 +85,7 @@ class HomePage extends StatelessWidget{
           buildWalletCard(),
           buildLevel(),
           buildServices(context),
+          buildLatestTransaction(),
           buildSendAgain(),
           buildFriendlyTips(),
         ],
@@ -270,13 +271,15 @@ class HomePage extends StatelessWidget{
                 iconUrl: 'assets/ic_topup.png',
                 title: 'Top up',
                 onTap: (){
-                  Navigator.pushNamed(context, 'topup');
+                  Navigator.pushNamed(context, '/top-up');
                 },
               ),
               HomeServiceItem(
                 iconUrl: 'assets/ic_send.png',
                 title: 'Send',
-                onTap: (){},
+                onTap: (){
+                  Navigator.pushNamed(context, '/transfer');
+                },
               ),HomeServiceItem(
                 iconUrl: 'assets/ic_withdraw.png',
                 title: 'withdraw',
@@ -406,6 +409,7 @@ class HomePage extends StatelessWidget{
         bottom: 50,
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'Friendly Tips',

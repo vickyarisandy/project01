@@ -17,7 +17,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState(){
     super.initState();
     Timer(const Duration(seconds: 2), () {
-      Navigator.pushNamedAndRemoveUntil(context, 'on-boarding', (route) => false);
+      Navigator.pushNamedAndRemoveUntil(context, '/on-boarding', (route) => false);
     });
   }
 
@@ -32,7 +32,7 @@ class _SplashPageState extends State<SplashPage> {
           decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(
-                    ''
+                    'assets/img_logo.png'
                 ),
             ),
           ),

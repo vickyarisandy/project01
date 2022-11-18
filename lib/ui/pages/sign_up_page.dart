@@ -81,7 +81,7 @@ class SignUpPage extends StatelessWidget{
           CustomFilledButton(
               title: 'Sign in',
               onPressed: (){
-
+                Navigator.pushNamed(context, '/sign-in');
               },
           ),
         ],
