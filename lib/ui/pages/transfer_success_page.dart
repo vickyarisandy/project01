@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:project01/shared/theme.dart';
 import 'package:project01/ui/widgets/buttons.dart';
 
-class ProfileEditSuccess extends StatelessWidget{
-  const ProfileEditSuccess ({Key?key}):super(key:key);
+class TransferSuccessPage extends StatelessWidget{
+  const TransferSuccessPage ({Key?key}):super(key:key);
 
   @override
   Widget build(BuildContext context){
@@ -13,7 +13,7 @@ class ProfileEditSuccess extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'nice update',
+              'Berhasil Transfer',
               style: blackTextStyle.copyWith(
                 fontSize: 20,
                 fontWeight: semiBold,
@@ -24,7 +24,7 @@ class ProfileEditSuccess extends StatelessWidget{
               height: 26,
             ),
             Text(
-              'test',
+              'Use the money wisely and\ngrow your finance',
               style: greyTextStyle.copyWith(
                 fontSize: 16,
               ),

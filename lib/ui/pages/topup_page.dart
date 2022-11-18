@@ -99,7 +99,9 @@ class TopupPage extends StatelessWidget{
           ),
           CustomFilledButton(
               title: 'Lanjut',
-              onPressed: (){},
+              onPressed: (){
+                Navigator.pushNamed(context, '/top-up-amount');
+              },
           ),
           const SizedBox(
             height: 57,

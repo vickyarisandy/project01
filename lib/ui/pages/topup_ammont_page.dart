@@ -209,7 +209,7 @@ class _TopupAmountState extends State<TopupAmount> {
                   
                   await launch('https://demo.midtrans.com/');
                   
-                  Navigator.pushNamedAndRemoveUntil(context, '/topup-success', (route) => false);
+                  Navigator.pushNamedAndRemoveUntil(context, '/top-up-success', (route) => false);
                 }
               },
             ),
