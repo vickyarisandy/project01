@@ -32,7 +32,34 @@ class TopupPage extends StatelessWidget{
           ),
           Row(
             children: [
-              Image.asset('assets/wallet.png')
+              Image.asset(
+                  'assets/wallet.png',
+                width: 80,
+              ),
+              const SizedBox(
+                width: 16,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                      '0000 0000 0000 0000',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: medium,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 2,
+                  ),
+                  Text(
+                      'Nama Pengguna',
+                    style: greyTextStyle.copyWith(
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ],
