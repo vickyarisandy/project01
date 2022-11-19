@@ -43,6 +43,7 @@ class _PinPageState extends State<PinPage> {
 
   Widget build(BuildContext context){
     return Scaffold(
+      backgroundColor: darkBackgroundColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -84,7 +85,7 @@ class _PinPageState extends State<PinPage> {
                 ),
               ),
               const SizedBox(
-                width: 66,
+                width: 70,
               ),
               Wrap(
                 spacing: 40,

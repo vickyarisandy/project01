@@ -71,19 +71,19 @@ class TransferPage extends StatelessWidget{
             height: 14,
           ),
           const TransferRecentUserItem(
-            imageUrl: 'assets/friend1.png',
+            imageUrl: 'assets/img_friend1.png',
             name: 'nama lengkap',
             username: 'username',
             isVerified: true,
           ),
           const TransferRecentUserItem(
-            imageUrl: 'assets/friend3.png',
+            imageUrl: 'assets/img_friend3.png',
             name: 'nama lengkap',
             username: 'username',
 
           ),
           const TransferRecentUserItem(
-            imageUrl: 'assets/friend4.png',
+            imageUrl: 'assets/img_friend4.png',
             name: 'nama lengkap',
             username: 'username',
           ),
@@ -114,13 +114,13 @@ class TransferPage extends StatelessWidget{
             runSpacing: 17,
             children: const [
                TransferResultUserItem(
-                imageUrl: 'assets/friend4.png',
+                imageUrl: 'assets/img_friend4.png',
                 name: 'nama lengkap',
                 username: 'username',
                  isVerified: true,
               ),
               TransferResultUserItem(
-                imageUrl: 'assets/friend2.png',
+                imageUrl: 'assets/img_friend2.png',
                 name: 'nama lengkap',
                 username: 'username',
                 isSelected: true,

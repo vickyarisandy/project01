@@ -35,7 +35,7 @@ class TransferSuccessPage extends StatelessWidget{
             ),
             CustomFilledButton(
               width: 183,
-              title: 'my profile',
+              title: 'Home',
               onPressed: (){
                 Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
               },

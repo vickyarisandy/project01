@@ -16,16 +16,16 @@ class SignUpPage extends StatelessWidget{
         ),
         children: [
           Container(
-            width: 155,
-            height: 50,
+            width: 255,
+            height: 100,
             margin: const EdgeInsets.only(
-              top: 100,
-              bottom: 100,
+              top: 50,
+              bottom: 70,
             ),
             decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
-                      'assets.img_logo_light.png',
+                      'assets/img_logo.png',
                   ),
               ),
             ),
@@ -78,7 +78,7 @@ class SignUpPage extends StatelessWidget{
           const SizedBox(
             height: 50,
           ),
-          CustomFilledButton(
+          CustomTextButtton(
               title: 'Sign in',
               onPressed: (){
                 Navigator.pushNamed(context, '/sign-in');
