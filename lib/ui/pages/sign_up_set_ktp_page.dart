@@ -1,15 +1,34 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:project01/models/sign_up_form_model.dart';
 import 'package:project01/shared/theme.dart';
 import 'package:project01/ui/widgets/buttons.dart';
 
-class SignUpSetKtpPage extends StatelessWidget{
+import '../../shared/shared_method.dart';
+
+class SignUpSetKtpPage extends StatefulWidget{
 
   final SignupFormModel datas;
 
   const SignUpSetKtpPage({Key? key, required this.datas,}): super(key: key);
+
+  @override
+  State<SignUpSetKtpPage> createState() => _SignUpSetKtpPageState();
+}
+
+class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
+
+  XFile? selectedImage;
+
+  bool validate(){
+    if(selectedImage==null){
+      return false;
+    }
+    return true;
+  }
 
   @override
   Widget build(BuildContext context){
@@ -50,17 +69,33 @@ class SignUpSetKtpPage extends StatelessWidget{
             ),
             child: Column(
               children: [
-                Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: lightBackgroundColor,
-                  ),
-                  child: Center(
-                    child: Image.asset(
-                      'assets/ic_upload.png',
-                      width: 12,
+                GestureDetector(
+                  onTap: () async{
+                    final image = await selectImage();
+                    setState(() {
+                      selectedImage = image;
+                    });
+                  },
+                  child: Container(
+                    width: 120,
+                    height: 120,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: lightBackgroundColor,
+                      image: selectedImage == null ? null :
+                      DecorationImage(
+                        fit: BoxFit.cover,
+                        image: FileImage(
+                          File(selectedImage!.path,),
+                        ),
+                      ),
+                    ),
+                    child: selectedImage != null ? null :
+                    Center(
+                      child: Image.asset(
+                        'assets/ic_upload.png',
+                        width: 32,
+                      ),
                     ),
                   ),
                 ),
@@ -80,7 +115,11 @@ class SignUpSetKtpPage extends StatelessWidget{
                 CustomFilledButton(
                     title: 'Continue',
                   onPressed: (){
-                      Navigator.pushNamed(context, '/sign-up-success');
+                      if(validate()){
+
+                      }else{
+                        showCustomSnackbar(context, 'Gambar tidak boleh kosong');
+                      }
                   },
                 ),
               ],
