@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:project01/models/sign_up_form_model.dart';
@@ -74,24 +76,19 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: lightBackgroundColor,
+                      image: selectedImage == null ? null :
+                      DecorationImage(
+                        fit: BoxFit.cover,
+                        image: FileImage(
+                          File(selectedImage!.path,),
+                        ),
+                      ),
                     ),
-                    child: Center(
+                    child: selectedImage != null ? null :
+                    Center(
                       child: Image.asset(
                         'assets/ic_upload.png',
                         width: 32,
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  width: 120,
-                  height: 120,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(
-                        'assets/img_profile.png',
                       ),
                     ),
                   ),
