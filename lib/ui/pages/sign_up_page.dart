@@ -5,6 +5,9 @@ import 'package:project01/ui/widgets/forms.dart';
 import '../../shared/theme.dart';
 
 class SignUpPage extends StatelessWidget{
+
+  // final TextEditingController = nameController TextEditingController();
+
   const SignUpPage({Key? key}): super(key: key);
 
   @override
