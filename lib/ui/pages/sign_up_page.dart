@@ -1,14 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:project01/shared/shared_method.dart';
 import 'package:project01/ui/widgets/buttons.dart';
 import 'package:project01/ui/widgets/forms.dart';
 
 import '../../shared/theme.dart';
 
-class SignUpPage extends StatelessWidget{
+class SignUpPage extends StatefulWidget{
 
-  // final TextEditingController = nameController TextEditingController();
 
   const SignUpPage({Key? key}): super(key: key);
+
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
+
+  final nameController = TextEditingController(text: '');
+  final emailController = TextEditingController(text: '');
+  final passwordController = TextEditingController(text: '');
+
+  bool validate(){
+    if(nameController.text.isEmpty || emailController.text.isEmpty || passwordController.text.isEmpty){
+      return false;
+    }
+    return true;
+  }
 
   @override
   Widget build(BuildContext context){
@@ -52,21 +69,24 @@ class SignUpPage extends StatelessWidget{
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CustomFormField(
-                    title: 'Full name'
+                CustomFormField(
+                    title: 'Full name',
+                    controller: nameController,
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                const CustomFormField(
-                    title: 'Email'
+                CustomFormField(
+                    title: 'Email',
+                    controller: emailController,
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                const CustomFormField(
+                CustomFormField(
                     title: 'password',
                   obscureText: true,
+                  controller: passwordController,
                 ),
                 const SizedBox(
                   height: 30,
@@ -74,7 +94,11 @@ class SignUpPage extends StatelessWidget{
                 CustomFilledButton(
                     title: 'Selanjutnya',
                     onPressed: (){
-                      Navigator.pushNamed(context, '/sign-up-profile');
+                      if(validate()){
+                        Navigator.pushNamed(context, '/sign-up-profile');
+                      } else{
+                        showCustomSnackbar(context, 'Maaf, tidak boleh kosong.');
+                      }
                     },
                 ),
               ],
@@ -88,6 +112,9 @@ class SignUpPage extends StatelessWidget{
               onPressed: (){
                 Navigator.pushNamed(context, '/sign-in');
               },
+          ),
+          const SizedBox(
+            height: 30,
           ),
         ],
       ),
