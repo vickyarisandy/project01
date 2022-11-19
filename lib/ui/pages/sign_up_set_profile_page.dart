@@ -24,7 +24,7 @@ class SignUpSetProfilePage extends StatelessWidget{
             ),
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assetName'),
+                image: AssetImage('assets/img_profile.png'),
               ),
             ),
           ),
@@ -63,13 +63,18 @@ class SignUpSetProfilePage extends StatelessWidget{
                 const SizedBox(
                   height: 16,
                 ),
-                CustomFormField(title: 'masukan pin',obscureText: true,),
+                const CustomFormField(
+                  title: 'masukan pin',
+                  obscureText: true,
+                ),
                 const SizedBox(
                   height: 50,
                 ),
                 CustomFilledButton(
-                  title: 'cont',
-                  onPressed: (){},
+                  title: 'Selanjutnya',
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/sign-up-ktp');
+                  },
                 ),
               ],
             ),
@@ -77,7 +82,7 @@ class SignUpSetProfilePage extends StatelessWidget{
           const SizedBox(
             height: 60,
           ),
-          CustomFilledButton(
+          CustomTextButton(
             title: 'skip',
             onPressed: (){
               Navigator.pushNamed(context, '/sign-up-ktp');

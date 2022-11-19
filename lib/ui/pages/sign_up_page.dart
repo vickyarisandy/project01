@@ -70,7 +70,9 @@ class SignUpPage extends StatelessWidget{
                 ),
                 CustomFilledButton(
                     title: 'Selanjutnya',
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.pushNamed(context, '/sign-up-profile');
+                    },
                 ),
               ],
             ),
@@ -78,7 +80,7 @@ class SignUpPage extends StatelessWidget{
           const SizedBox(
             height: 50,
           ),
-          CustomTextButtton(
+          CustomTextButton(
               title: 'Sign in',
               onPressed: (){
                 Navigator.pushNamed(context, '/sign-in');

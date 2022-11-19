@@ -86,7 +86,7 @@ class SignInPage extends StatelessWidget{
             const SizedBox(
               height: 50,
             ),
-            CustomTextButtton(
+            CustomTextButton(
                 title: 'buat akun',
               onPressed: () {
                   Navigator.pushNamed(context, '/sign-up');

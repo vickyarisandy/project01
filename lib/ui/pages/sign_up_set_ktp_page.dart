@@ -24,7 +24,7 @@ class SignUpSetKtpPage extends StatelessWidget{
             ),
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assetName'),
+                  image: AssetImage('assets/ic_edit_profile.png'),
               ),
             ),
           ),
@@ -74,8 +74,10 @@ class SignUpSetKtpPage extends StatelessWidget{
                   height: 50,
                 ),
                 CustomFilledButton(
-                    title: 'cont',
-                  onPressed: (){},
+                    title: 'Continue',
+                  onPressed: (){
+                      Navigator.pushNamed(context, '/sign-up-success');
+                  },
                 ),
               ],
             ),
@@ -83,7 +85,7 @@ class SignUpSetKtpPage extends StatelessWidget{
           const SizedBox(
             height: 60,
           ),
-          CustomFilledButton(
+          CustomTextButton(
               title: 'skip',
             onPressed: (){
                 Navigator.pushNamed(context, '/sign-up-success');
