@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:project01/models/sign_up_form_model.dart
-import 'package:project01/models/user_model.dart';';
+import 'package:project01/models/sign_up_form_model.dart';
+import 'package:project01/models/user_model.dart';
 import '../shared/shared_values.dart';
 
 // request endpoint
