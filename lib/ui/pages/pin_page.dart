@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:project01/blocs/auth/auth_bloc.dart';
 import 'package:project01/shared/shared_method.dart';
 import 'package:project01/shared/theme.dart';
 import 'package:project01/ui/widgets/buttons.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PinPage extends StatefulWidget{
   const PinPage({Key? key}): super(key:key);
@@ -13,6 +15,8 @@ class PinPage extends StatefulWidget{
 class _PinPageState extends State<PinPage> {
 
   final TextEditingController pinController = TextEditingController(text: '');
+  String pin = '';
+  bool isError = false;
 
   addPin(String number){
     if(pinController.text.length < 6){
@@ -22,15 +26,15 @@ class _PinPageState extends State<PinPage> {
     }
 
     if(pinController.text.length == 6){
-      if(pinController.text == '123456'){
+      if(pinController.text == pin){
         Navigator.pop(context, true);
       }else{
+        setState(() {
+          isError = true;
+        });
         showCustomSnackbar(context, 'PIN yang anda masukan salah. Silahkan dicoba kembali.');
       }
     }
-
-
-
   }
 
   deletePin(){
@@ -38,6 +42,15 @@ class _PinPageState extends State<PinPage> {
       setState(() {
         pinController.text = pinController.text.substring(0, pinController.text.length - 1);
       });
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    final authState = context.read<AuthBloc>().state;
+    if(authState is AuthSuccess){
+      pin = authState.user.pin!;
     }
   }
 
@@ -74,6 +87,7 @@ class _PinPageState extends State<PinPage> {
                     fontSize: 36,
                     fontWeight: medium,
                     letterSpacing: 16,
+                    color: isError ? redColor : whiteColor,
                   ),
                   decoration: InputDecoration(
                     disabledBorder: UnderlineInputBorder(
@@ -85,7 +99,7 @@ class _PinPageState extends State<PinPage> {
                 ),
               ),
               const SizedBox(
-                width: 70,
+                width: 66,
               ),
               Wrap(
                 spacing: 40,
