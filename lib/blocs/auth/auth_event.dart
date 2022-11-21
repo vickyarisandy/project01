@@ -34,4 +34,4 @@ class AuthLogin extends AuthEvent{
 }
 
 
-// 12 - 78
+class AuthGetCurrentUser extends AuthEvent{}
