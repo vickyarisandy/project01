@@ -100,7 +100,7 @@ class AuthService{
         return data;
       }
     }catch(e){
-      throw;
+      rethrow;
     }
   }
 
