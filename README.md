@@ -16,7 +16,7 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 
-function call page
+## function call page
 
 ```agsl
 
@@ -128,3 +128,47 @@ class NameClassPage extends StatelessWidget{
 >> Nb
 
 untuk kelas turunan sudah diterapkan,
+
+## auth
+
+```ags1
+## register (endpoint)
+
+> request
+- name
+- email
+- password
+- pin
+- profilePicture
+
+> respon
+- name
+- email
+- password (hash)
+- pin
+- profile_picture
+
+## login (endpoint) 
+
+>request
+- email (required)
+- password (required)
+
+> respon
+- id
+- name
+- email
+- username
+- email_verified_at
+- verified
+- proffile_picture
+- ktp
+- created_at
+- updated_at
+- balance
+- card_number
+- pin
+- token
+- token_expires_in
+- token_type  
+```
