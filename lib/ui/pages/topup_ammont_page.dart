@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:project01/models/topup_form_model.dart';
 import 'package:project01/shared/theme.dart';
 import 'package:project01/ui/widgets/buttons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class TopupAmount extends StatefulWidget{
-  const TopupAmount({Key? key}): super(key:key);
+
+  final TopupFormModel data;
+
+
+  const TopupAmount({
+    Key? key,
+    required this.data,
+  }): super(key:key);
 
   @override
   State<TopupAmount> createState() => _TopupAmountState();

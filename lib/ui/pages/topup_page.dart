@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project01/blocs/auth/auth_bloc.dart';
 import 'package:project01/models/payment_method_model.dart';
+import 'package:project01/models/topup_form_model.dart';
 import 'package:project01/shared/theme.dart';
+import 'package:project01/ui/pages/topup_ammont_page.dart';
 import 'package:project01/ui/widgets/bank_item.dart';
 import 'package:project01/ui/widgets/buttons.dart';
 
@@ -134,7 +136,16 @@ class _TopupPageState extends State<TopupPage> {
               if(selectedPaymentMethod != null ) CustomFilledButton(
                 title: 'Lanjut',
                 onPressed: () {
-                  Navigator.pushNamed(context, '/top-up-amount');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TopupAmount(
+                        data: TopupFormModel(
+                          paymentMethodCode: selectedPaymentMethod?.code,
+                        ),
+                      ),
+                    ),
+                  );
                 },
               ),
               const SizedBox(

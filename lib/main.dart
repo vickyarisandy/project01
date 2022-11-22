@@ -13,11 +13,8 @@ import "package:project01/ui/pages/profile_edit_success.dart";
 import "package:project01/ui/pages/profile_page.dart";
 import "package:project01/ui/pages/sign_in_page.dart";
 import "package:project01/ui/pages/sign_up_page.dart";
-import "package:project01/ui/pages/sign_up_set_ktp_page.dart";
-import "package:project01/ui/pages/sign_up_set_profile_page.dart";
 import "package:project01/ui/pages/sign_up_success_page.dart";
 import "package:project01/ui/pages/splash_page.dart";
-import "package:project01/ui/pages/topup_ammont_page.dart";
 import "package:project01/ui/pages/topup_page.dart";
 import "package:project01/ui/pages/topup_success.dart";
 import 'package:project01/ui/pages/transfer_amount_page.dart';
@@ -67,7 +64,6 @@ class MyApp extends StatelessWidget{
           "/profile-edit-pin": (context) => const ProfileEditPin(),
           "/profile-edit-success": (context) => const ProfileEditSuccess(),
           "/top-up": (context) => const TopupPage(),
-          "/top-up-amount": (context) => const TopupAmount(),
           "/top-up-success": (context) => const TopupSuccess(),
           "/transfer": (context) => const TransferPage(),
           "/transfer-amount": (context) => const TransferAmountPage(),
