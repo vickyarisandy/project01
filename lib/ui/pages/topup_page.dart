@@ -133,28 +133,32 @@ class _TopupPageState extends State<TopupPage> {
               const SizedBox(
                 height: 12,
               ),
-              if(selectedPaymentMethod != null ) CustomFilledButton(
-                title: 'Lanjut',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => TopupAmount(
-                        data: TopupFormModel(
-                          paymentMethodCode: selectedPaymentMethod?.code,
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
-              const SizedBox(
-                height: 57,
-              ),
+
             ],
           );
         },
+
       ),
+      floatingActionButton: (selectedPaymentMethod != null )
+          ? Container(
+        margin: EdgeInsets.all(24),
+            child: CustomFilledButton(
+      title: 'Lanjut',
+      onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => TopupAmount(
+                data: TopupFormModel(
+                  paymentMethodCode: selectedPaymentMethod?.code,
+                ),
+              ),
+            ),
+        );
+      },
+    ),
+          ) : Container(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
