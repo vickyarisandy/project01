@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:project01/models/sign_in_form_model.dart';
 import 'package:project01/models/sign_up_form_model.dart';
 import 'package:project01/models/user_edit_form_model.dart';
@@ -101,6 +102,22 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(AuthLoading());
           await AuthService().logout();
           emit(AuthInitial()); //kondisi awal
+        }catch(e){
+          emit(AuthFailed(e.toString()));
+        }
+      }
+
+      if(event is AuthUpdateBalance){
+        try{
+          if(state is AuthSuccess){
+            final currentUser = (state as AuthSuccess).user;
+            final updatedUser = currentUser.copyWith(
+              balance: currentUser.balance! + event.amount,
+            );
+
+            emit(AuthSuccess(updatedUser));
+
+          }
         }catch(e){
           emit(AuthFailed(e.toString()));
         }
